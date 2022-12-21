@@ -28,7 +28,7 @@
 #include <tensorflow/lite/schema/schema_generated.h>
 #include <tensorflow/lite/version.h>
 
-#include "model right.h"
+#include "model_right.h"
 
 const float accelerationThreshold = 2.5; // threshold of significant in G's
 const int numSamples = 119;
