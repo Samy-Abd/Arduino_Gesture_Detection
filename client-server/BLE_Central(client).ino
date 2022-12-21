@@ -24,7 +24,7 @@
 #include <tensorflow/lite/schema/schema_generated.h>
 #include <tensorflow/lite/version.h>
 
-#include "model left final.h"
+#include "model\model_left.h"
 
 
 const float accelerationThreshold = 2.5;  // threshold of significant in G's
