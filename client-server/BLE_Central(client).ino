@@ -24,7 +24,7 @@
 #include <tensorflow/lite/schema/schema_generated.h>
 #include <tensorflow/lite/version.h>
 
-#include "model left.h"
+#include "model left final.h"
 
 
 const float accelerationThreshold = 2.5;  // threshold of significant in G's
@@ -53,7 +53,9 @@ byte tensorArena[tensorArenaSize] __attribute__((aligned(16)));
 // array to map gesture index to a name
 const char* GESTURES[] = {
   "clap",
-  "wakanda"
+  "wakanda",
+  "up",
+  "down"
 };
 
 #define NUM_GESTURES (sizeof(GESTURES) / sizeof(GESTURES[0]))
@@ -125,7 +127,7 @@ void loop() {
 
 void connectToPeripheral() {
   gesture = gestureDetectection();
-  
+
   BLEDevice peripheral;
 
   Serial.println("- Discovering peripheral device...");
@@ -145,12 +147,12 @@ void connectToPeripheral() {
     Serial.println(peripheral.advertisedServiceUuid());
     Serial.println(" ");
     BLE.stopScan();
-    controlPeripheral(peripheral,gesture);
+    controlPeripheral(peripheral, gesture);
   }
 }
 
-void controlPeripheral(BLEDevice peripheral,int gesture) {
-  
+void controlPeripheral(BLEDevice peripheral, int gesture) {
+
 
   Serial.println("- Connecting to peripheral device...");
 
@@ -187,7 +189,7 @@ void controlPeripheral(BLEDevice peripheral,int gesture) {
   }
 
   while (peripheral.connected()) {
-    
+
     Serial.print("* Writing value to gesture_type characteristic: ");
     Serial.println(gesture);
     gestureCharacteristic.writeValue((byte)gesture);
@@ -244,7 +246,8 @@ int gestureDetectection() {
         TfLiteStatus invokeStatus = tflInterpreter->Invoke();
         if (invokeStatus != kTfLiteOk) {
           Serial.println("Invoke failed!");
-          while (1);
+          while (1)
+            ;
         }
 
         // Loop through the output tensor values from the model
@@ -264,13 +267,21 @@ int gestureDetectection() {
       maxIndex = i;
     }
   }
-
   switch (maxIndex) {
     case 0:
       Serial.println("-Client : Clap gesture detected");
       break;
     case 1:
       Serial.println("-Client : Wakanda gesture detected");
+      break;
+    case 2:
+      Serial.println("-Client : Up gesture detected");
+      break;
+    case 3:
+      Serial.println("-Client : Down gesture detected");
+      break;
+    default:
+      Serial.println("-Client : No gesture detected");
       break;
   }
 

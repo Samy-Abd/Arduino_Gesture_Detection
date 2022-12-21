@@ -1,1 +1,1 @@
-# Arduino_Gesture_Detection
+# Gesture detection using Arduino NANO BLE Nano 33
