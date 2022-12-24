@@ -20,3 +20,13 @@ Nous avons réalisé l'acquisition des données grâce à **CoolTerm** (voir le 
 <img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/19030079451/original/jt7nvcVgzu4Z4Jrd5MSM1i54zb-n6TrPGA.gif?1533912271">
 
 
+# 2 Team
+[Nada] (https://github.com/NaaaaaaaaaaDaa)  
+[Ahlem] (https://github.com/kawaremu)  
+[Younes] (https://github.com/RB-Younes)  
+[Sophinez] (https://github.com/sophynez)  
+[Yacine] (https://github.com/Yacine-Oussadi)  
+[Yanis] (https://github.com/Yanis-Bouchelaghem)  
+[Samy] (https://github.com/FennicOculus)  
+
+
