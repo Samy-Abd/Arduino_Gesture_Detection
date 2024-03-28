@@ -21,7 +21,7 @@ Nous avons réalisé l'acquisition des données grâce à **CoolTerm** (voir le 
 
 
 # 2 Team
-[Nada](https://github.com/NaaaaaaaaaaDaa)  
+[Nada](https://github.com/Abed-Nada)
 [Ahlem](https://github.com/kawaremu)  
 [Younes](https://github.com/RB-Younes)  
 [Sophinez](https://github.com/sophynez)  
